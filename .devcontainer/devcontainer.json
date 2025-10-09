@@ -1,0 +1,33 @@
+{
+  "name": "Claude Agents SDK Dev",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  },
+  
+  "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
+  
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,readonly,type=bind"
+  ],
+  
+  "remoteUser": "vscode",
+  
+  "runArgs": [
+    "--network=host"
+  ]
+}
