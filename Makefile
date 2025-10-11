@@ -61,3 +61,4 @@ status:
 	@echo ""
 	@echo "📂 Logs:"
 	@ls -ld logs/*/ 2>/dev/null | wc -l | xargs echo "  Total test runs:"
+

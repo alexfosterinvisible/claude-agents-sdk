@@ -304,3 +304,4 @@ ls -t | tail -n +6 | xargs rm -rf
 - Use `.env` files for secrets (they're copied to each worktree)
 - Be cautious with agent permissions in containers
 - Review the cursor-dev-containers.md security warnings
+

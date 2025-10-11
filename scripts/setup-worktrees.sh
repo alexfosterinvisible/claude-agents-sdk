@@ -49,3 +49,4 @@ for i in $(seq 1 $NUM_WORKTREES); do
 done
 echo ""
 echo "🚀 Next step: Run './scripts/run-parallel.sh <task_description>'"
+
