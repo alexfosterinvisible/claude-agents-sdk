@@ -33,10 +33,15 @@ wheels/
 # IDE
 .vscode/
 .idea/
+.cursor/
 *.swp
 *.swo
 *~
 
+# Task tracking
+zTasks.md
+
 # OS
 .DS_Store
 Thumbs.db
+
