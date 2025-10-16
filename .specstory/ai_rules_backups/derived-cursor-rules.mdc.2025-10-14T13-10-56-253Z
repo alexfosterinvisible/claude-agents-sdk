@@ -1,0 +1,21 @@
+
+## HEADERS
+
+## TECH STACK
+
+## PROJECT DOCUMENTATION & CONTEXT SYSTEM
+
+## CODING STANDARDS & BEST PRACTICES
+- Use TDD approach.
+- Include proper docstrings with requirement tags.
+- Use type hints.
+- Follow the FCIS pattern (Functional Core, Imperative Shell).
+- Use dataclasses for configuration.
+- Include guard main with simple confirmation.
+- Use loguru for logging.
+- Store config in .env.
+- Create clean, minimal, elegant code.
+
+## DEBUGGING
+
+## WORKFLOW & RELEASE RULES
