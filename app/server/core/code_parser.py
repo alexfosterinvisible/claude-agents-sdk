@@ -8,7 +8,7 @@
 
 import ast
 from pathlib import Path
-from typing import List, Optional
+from typing import List
 import tree_sitter_python as tspython
 import tree_sitter_javascript as tsjavascript
 from tree_sitter import Language, Parser

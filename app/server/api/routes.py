@@ -7,10 +7,10 @@
 """
 
 from fastapi import APIRouter, HTTPException, Query
-from typing import List, Dict, Optional
+from typing import Dict, Optional
 
 from core import repo_analyzer, code_parser, dependency_analyzer, git_integration, layout_manager, position_inference, thread_parser
-from models import RepoStructure, BaseNode, Edge, Commit, Branch, Position, LayoutData, ThreadData, ErrorResponse
+from models import Position
 from config import CFG
 
 router = APIRouter(prefix="/api", tags=["api"])

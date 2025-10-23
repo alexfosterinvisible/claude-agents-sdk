@@ -32,7 +32,6 @@ def infer_positions(nodes: List[BaseNode], edges: List[Edge]) -> Dict[str, Posit
 
     # Layout configuration
     HORIZONTAL_SPACING = 300
-    VERTICAL_SPACING = 150
     LAYER_VERTICAL_OFFSET = 200
 
     # Layer 1: Folders (top)

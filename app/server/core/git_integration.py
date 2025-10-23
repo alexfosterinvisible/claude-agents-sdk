@@ -10,7 +10,6 @@ from pathlib import Path
 from typing import List, Dict
 from datetime import datetime
 from git import Repo, InvalidGitRepositoryError
-from git.objects.commit import Commit as GitCommit
 
 from models import Commit, Branch, FileChange, BlameLine
 
