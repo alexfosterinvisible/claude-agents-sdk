@@ -53,3 +53,22 @@ example script="q-1.py":
 # Show help
 help:
     @just --list
+
+# SDLC Planner Commands
+
+# Start SDLC Planner backend server
+sdlc-server:
+    ./scripts/start_server.sh
+
+# Run SDLC Planner backend tests
+sdlc-test:
+    cd app/server && uv run pytest -v
+
+# Clean SDLC Planner cache files
+sdlc-clean:
+    find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+    find . -type f -name "*.pyc" -delete
+
+# Install SDLC Planner backend dependencies
+sdlc-install:
+    cd app/server && uv sync
