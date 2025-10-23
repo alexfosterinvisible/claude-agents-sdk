@@ -285,3 +285,43 @@ async def get_thread(thread_file: str) -> Dict:
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/docs/requirements")
+async def get_requirements(path: Optional[str] = None) -> Dict:
+    """
+    Get requirements.md and design_decisions.md content from repository.
+
+    Args:
+        path: Repository path (defaults to CFG.repo_path)
+
+    Returns:
+        Dictionary with requirements and design_decisions markdown content
+    """
+    from pathlib import Path
+
+    repo_path = Path(path or CFG.repo_path)
+
+    requirements_content = ""
+    design_decisions_content = ""
+
+    # Try to read requirements.md
+    requirements_file = repo_path / "requirements.md"
+    if requirements_file.exists():
+        try:
+            requirements_content = requirements_file.read_text(encoding='utf-8')
+        except Exception:
+            pass
+
+    # Try to read design_decisions.md
+    design_decisions_file = repo_path / "design_decisions.md"
+    if design_decisions_file.exists():
+        try:
+            design_decisions_content = design_decisions_file.read_text(encoding='utf-8')
+        except Exception:
+            pass
+
+    return {
+        "requirements": requirements_content,
+        "design_decisions": design_decisions_content
+    }

@@ -105,12 +105,15 @@ class CallEdge(Edge):
 
 class Commit(BaseModel):
     """Git commit information."""
-    hash: str
+    sha: str = Field(alias="hash")
     author: str
     email: str
     date: datetime
     message: str
     files_changed: List[str] = Field(default_factory=list)
+
+    class Config:
+        populate_by_name = True
 
 
 class Branch(BaseModel):

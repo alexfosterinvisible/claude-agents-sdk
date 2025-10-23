@@ -49,7 +49,7 @@ def get_commit_history(repo_path: str, max_count: int = 100) -> List[Commit]:
                     files_changed.append(change.b_path)
 
         commit = Commit(
-            hash=git_commit.hexsha,
+            sha=git_commit.hexsha,
             author=git_commit.author.name,
             email=git_commit.author.email,
             date=datetime.fromtimestamp(git_commit.committed_date),

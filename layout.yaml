@@ -1,0 +1,5 @@
+version: '1.0'
+positions:
+  node1:
+    x: 150.5
+    y: 250.5

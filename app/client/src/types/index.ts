@@ -10,29 +10,35 @@ export interface BaseNode {
   type: 'file' | 'folder' | 'function' | 'class';
   name: string;
   path: string;
+  parent_id: string | null;
 }
 
 export interface FileNode extends BaseNode {
   type: 'file';
-  extension?: string;
+  extension: string;
+  size: number;
+  last_modified: string;
+  last_commit?: Commit;
 }
 
 export interface FolderNode extends BaseNode {
   type: 'folder';
+  children_count: number;
 }
 
 export interface FunctionNode extends BaseNode {
   type: 'function';
-  parameters?: string[];
-  lineNumber?: number;
-  parentFile: string;
+  parameters: string[];
+  return_type?: string;
+  file_path: string;
+  line_number: number;
 }
 
 export interface ClassNode extends BaseNode {
   type: 'class';
-  methods?: string[];
-  lineNumber?: number;
-  parentFile: string;
+  methods: string[];
+  file_path: string;
+  line_number: number;
 }
 
 export type Node = FileNode | FolderNode | FunctionNode | ClassNode;
@@ -41,25 +47,15 @@ export interface Edge {
   id: string;
   source: string;
   target: string;
-  type: 'import' | 'call';
-}
-
-export interface ImportEdge extends Edge {
-  type: 'import';
-  importName: string;
-}
-
-export interface CallEdge extends Edge {
-  type: 'call';
-  functionName: string;
+  label?: string;
+  type?: 'import' | 'call' | 'inheritance' | 'contains';
 }
 
 export interface Commit {
-  hash: string;
+  sha: string;
+  message: string;
   author: string;
   date: string;
-  message: string;
-  filesChanged: string[];
 }
 
 export interface Branch {
@@ -80,4 +76,19 @@ export interface ThreadData {
   id: string;
   title: string;
   messages: ThreadMessage[];
+}
+
+export interface RepoStructure {
+  nodes: Node[];
+  edges: Edge[];
+  root_path: string;
+}
+
+export interface LayoutData {
+  [nodeId: string]: Position;
+}
+
+export interface RequirementsData {
+  requirements: string;
+  design_decisions: string;
 }
