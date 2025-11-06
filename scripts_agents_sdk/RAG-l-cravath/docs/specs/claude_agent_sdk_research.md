@@ -1,4 +1,4 @@
-# Claude Agent SDK Research Findings
+![1762407401446](image/claude_agent_sdk_research/1762407401446.png)![1762407402901](image/claude_agent_sdk_research/1762407402901.png)# Claude Agent SDK Research Findings
 
 Research conducted on TODO items from `cursor_process_explorer_cli.py` lines 346-368.
 
