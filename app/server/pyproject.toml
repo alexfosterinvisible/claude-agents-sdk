@@ -1,0 +1,20 @@
+[project]
+name = "sdlc-planner"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.119.1",
+    "gitpython[standard]>=3.1.45",
+    "httpx[standard]>=0.28.1",
+    "pydantic[standard]>=2.12.3",
+    "pytest-asyncio[standard]>=1.2.0",
+    "pytest[standard]>=8.4.2",
+    "python-dotenv[standard]>=1.1.1",
+    "pyyaml[standard]>=6.0.3",
+    "ruff>=0.8.4",
+    "tree-sitter-javascript[standard]>=0.25.0",
+    "tree-sitter-python[standard]>=0.25.0",
+    "tree-sitter[standard]>=0.25.2",
+    "uvicorn[standard]>=0.38.0",
+]
